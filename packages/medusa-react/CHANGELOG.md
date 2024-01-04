@@ -1,5 +1,14 @@
 # Change Log
 
+## 9.0.13
+
+### Patch Changes
+
+- [#5982](https://github.com/medusajs/medusa/pull/5982) [`925feea0`](https://github.com/medusajs/medusa/commit/925feea04a8222285175c33577548e50516069a7) Thanks [@olivermrbl](https://github.com/olivermrbl)! - feat(cart): Add cart module package
+
+- Updated dependencies [[`bfd10dad`](https://github.com/medusajs/medusa/commit/bfd10dadaf6286aa26dac96d7c0cc5bc24e43c9b), [`f25ca30b`](https://github.com/medusajs/medusa/commit/f25ca30b3aec558094b1dffe70583fcbba64b29a)]:
+  - @medusajs/medusa-js@6.1.5
+
 ## 9.0.12
 
 ### Patch Changes

@@ -1,5 +1,38 @@
 # Change Log
 
+## 1.19.1
+
+### Patch Changes
+
+- [#5869](https://github.com/medusajs/medusa/pull/5869) [`45996d58`](https://github.com/medusajs/medusa/commit/45996d58a2665d72335faad11bea958f8da74195) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(medusa, interfaces, utils, webshiper): Uniformise class checks
+
+- [#5450](https://github.com/medusajs/medusa/pull/5450) [`1d7888af`](https://github.com/medusajs/medusa/commit/1d7888afca3900f8a29b72f8fd149fc3e1e2ea4a) Thanks [@fPolic](https://github.com/fPolic)! - feat(medusa, link-module): SalesChannel<>Product joiner config
+
+- [#5901](https://github.com/medusajs/medusa/pull/5901) [`1a2f513d`](https://github.com/medusajs/medusa/commit/1a2f513d5361101b4c606b710a3905025118289e) Thanks [@adrien2p](https://github.com/adrien2p)! - fix(medusa): Passport loader resolving to early
+
+- [#5952](https://github.com/medusajs/medusa/pull/5952) [`487067fb`](https://github.com/medusajs/medusa/commit/487067fb4802cb4bc0da1fcd154b0a89f4a0ef3a) Thanks [@olivermrbl](https://github.com/olivermrbl)! - feat(medusa): Resolve babel executable with npx
+
+- [#5926](https://github.com/medusajs/medusa/pull/5926) [`f25ca30b`](https://github.com/medusajs/medusa/commit/f25ca30b3aec558094b1dffe70583fcbba64b29a) Thanks [@olivermrbl](https://github.com/olivermrbl)! - fix(medusa, medusa-js): publishable api key bugs
+
+- [#5857](https://github.com/medusajs/medusa/pull/5857) [`2d79eeee`](https://github.com/medusajs/medusa/commit/2d79eeeecc8086d30e7f26e45f2e1aa03ca14145) Thanks [@riqwan](https://github.com/riqwan)! - chore(medusa): add currency to region responses
+
+- [#5980](https://github.com/medusajs/medusa/pull/5980) [`278b7fb2`](https://github.com/medusajs/medusa/commit/278b7fb203f505ce163efe38055e9f36388985ea) Thanks [@adrien2p](https://github.com/adrien2p)! - fix(medusa): Update cart sales channel should not remove all line items
+
+- [#5814](https://github.com/medusajs/medusa/pull/5814) [`496dcf10`](https://github.com/medusajs/medusa/commit/496dcf10c430b9ff9c21ee8bf8fae34ba01902de) Thanks [@adrien2p](https://github.com/adrien2p)! - Feat/cart completion conflict fixes
+
+- [#5810](https://github.com/medusajs/medusa/pull/5810) [`fe007d01`](https://github.com/medusajs/medusa/commit/fe007d01bd827f0e09ee545e48cef18913540c68) Thanks [@fPolic](https://github.com/fPolic)! - feat: sales channel <> order link
+
+- [#5459](https://github.com/medusajs/medusa/pull/5459) [`76332ca6`](https://github.com/medusajs/medusa/commit/76332ca6c153a786acc07d3f06ff45c3b9346fd3) Thanks [@fPolic](https://github.com/fPolic)! - feat: SalesChannel <> Cart joiner config
+
+- Updated dependencies [[`6d1e3cc0`](https://github.com/medusajs/medusa/commit/6d1e3cc0285ef157fd6486060e8b32c00c01aa80), [`42cc8ae3`](https://github.com/medusajs/medusa/commit/42cc8ae3f89ed7d642e51654d1a3cca011f13155), [`45996d58`](https://github.com/medusajs/medusa/commit/45996d58a2665d72335faad11bea958f8da74195), [`1d7888af`](https://github.com/medusajs/medusa/commit/1d7888afca3900f8a29b72f8fd149fc3e1e2ea4a), [`9cc787ca`](https://github.com/medusajs/medusa/commit/9cc787cac4bf1c5d8edf1c4b548bb3205100e822), [`8402f469`](https://github.com/medusajs/medusa/commit/8402f46970c007bab9e0f1f6ae653d955650d503), [`925feea0`](https://github.com/medusajs/medusa/commit/925feea04a8222285175c33577548e50516069a7), [`3f6d7996`](https://github.com/medusajs/medusa/commit/3f6d79961dec1c5eb8950f8eacd94a5d87a4acde), [`c41f3002`](https://github.com/medusajs/medusa/commit/c41f3002f3118b1f195c5c822fe0f400091d115b), [`a0dd18c1`](https://github.com/medusajs/medusa/commit/a0dd18c12ac5ab6280366d93d7b47cdb3036914b), [`d16d1061`](https://github.com/medusajs/medusa/commit/d16d10619dfbd3966a4709753de3d8cc37c6f2eb), [`890e76a5`](https://github.com/medusajs/medusa/commit/890e76a5c53039576c42ca4d46af6f6977cdebd1), [`fe007d01`](https://github.com/medusajs/medusa/commit/fe007d01bd827f0e09ee545e48cef18913540c68), [`76332ca6`](https://github.com/medusajs/medusa/commit/76332ca6c153a786acc07d3f06ff45c3b9346fd3)]:
+  - @medusajs/modules-sdk@1.12.6
+  - @medusajs/utils@1.11.3
+  - @medusajs/link-modules@0.2.6
+  - @medusajs/orchestration@0.5.2
+  - @medusajs/workflows-sdk@0.1.1
+  - medusa-test-utils@1.1.41
+  - @medusajs/core-flows@0.0.4
+
 ## 1.19.0
 
 ### Minor Changes

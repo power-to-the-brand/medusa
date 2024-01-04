@@ -1,5 +1,20 @@
 # @medusajs/modules-sdk
 
+## 1.12.6
+
+### Patch Changes
+
+- [#5943](https://github.com/medusajs/medusa/pull/5943) [`6d1e3cc0`](https://github.com/medusajs/medusa/commit/6d1e3cc0285ef157fd6486060e8b32c00c01aa80) Thanks [@pKorsholm](https://github.com/pKorsholm)! - feat(modules-sdk, types): add initial authentication module configuration
+
+- [#5982](https://github.com/medusajs/medusa/pull/5982) [`925feea0`](https://github.com/medusajs/medusa/commit/925feea04a8222285175c33577548e50516069a7) Thanks [@olivermrbl](https://github.com/olivermrbl)! - feat(cart): Add cart module package
+
+- [#5920](https://github.com/medusajs/medusa/pull/5920) [`3f6d7996`](https://github.com/medusajs/medusa/commit/3f6d79961dec1c5eb8950f8eacd94a5d87a4acde) Thanks [@riqwan](https://github.com/riqwan)! - feat(types,modules-sdk): basic module setup for promotions
+
+- Updated dependencies [[`6d1e3cc0`](https://github.com/medusajs/medusa/commit/6d1e3cc0285ef157fd6486060e8b32c00c01aa80), [`42cc8ae3`](https://github.com/medusajs/medusa/commit/42cc8ae3f89ed7d642e51654d1a3cca011f13155), [`45996d58`](https://github.com/medusajs/medusa/commit/45996d58a2665d72335faad11bea958f8da74195), [`9cc787ca`](https://github.com/medusajs/medusa/commit/9cc787cac4bf1c5d8edf1c4b548bb3205100e822), [`925feea0`](https://github.com/medusajs/medusa/commit/925feea04a8222285175c33577548e50516069a7), [`3f6d7996`](https://github.com/medusajs/medusa/commit/3f6d79961dec1c5eb8950f8eacd94a5d87a4acde), [`c41f3002`](https://github.com/medusajs/medusa/commit/c41f3002f3118b1f195c5c822fe0f400091d115b), [`d16d1061`](https://github.com/medusajs/medusa/commit/d16d10619dfbd3966a4709753de3d8cc37c6f2eb), [`c1c470e6`](https://github.com/medusajs/medusa/commit/c1c470e6b8646c5f0b4bca56a8e785f6c34e1fef), [`890e76a5`](https://github.com/medusajs/medusa/commit/890e76a5c53039576c42ca4d46af6f6977cdebd1), [`fe007d01`](https://github.com/medusajs/medusa/commit/fe007d01bd827f0e09ee545e48cef18913540c68), [`76332ca6`](https://github.com/medusajs/medusa/commit/76332ca6c153a786acc07d3f06ff45c3b9346fd3)]:
+  - @medusajs/types@1.11.10
+  - @medusajs/utils@1.11.3
+  - @medusajs/orchestration@0.5.2
+
 ## 1.12.5
 
 ### Patch Changes

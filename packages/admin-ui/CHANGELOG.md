@@ -1,5 +1,14 @@
 # @medusajs/admin-ui
 
+## 2.1.11
+
+### Patch Changes
+
+- [#5822](https://github.com/medusajs/medusa/pull/5822) [`7ecea344`](https://github.com/medusajs/medusa/commit/7ecea34487972bc05aae46918d5caebce607594b) Thanks [@hexrw](https://github.com/hexrw)! - feat(admin-ui): Add Czech translation
+
+- Updated dependencies [[`925feea0`](https://github.com/medusajs/medusa/commit/925feea04a8222285175c33577548e50516069a7)]:
+  - medusa-react@9.0.13
+
 ## 2.1.10
 
 ### Patch Changes

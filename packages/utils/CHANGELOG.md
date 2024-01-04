@@ -1,5 +1,28 @@
 # @medusajs/utils
 
+## 1.11.3
+
+### Patch Changes
+
+- [#5957](https://github.com/medusajs/medusa/pull/5957) [`42cc8ae3`](https://github.com/medusajs/medusa/commit/42cc8ae3f89ed7d642e51654d1a3cca011f13155) Thanks [@riqwan](https://github.com/riqwan)! - feat(types,utils): added promotion create with rules
+
+- [#5869](https://github.com/medusajs/medusa/pull/5869) [`45996d58`](https://github.com/medusajs/medusa/commit/45996d58a2665d72335faad11bea958f8da74195) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(medusa, interfaces, utils, webshiper): Uniformise class checks
+
+- [#5728](https://github.com/medusajs/medusa/pull/5728) [`9cc787ca`](https://github.com/medusajs/medusa/commit/9cc787cac4bf1c5d8edf1c4b548bb3205100e822) Thanks [@adrien2p](https://github.com/adrien2p)! - feat(workflows-sdk): Configurable retries upon step creation
+
+- [#5929](https://github.com/medusajs/medusa/pull/5929) [`c41f3002`](https://github.com/medusajs/medusa/commit/c41f3002f3118b1f195c5c822fe0f400091d115b) Thanks [@adrien2p](https://github.com/adrien2p)! - Fix/utils object from string path
+
+- [#5985](https://github.com/medusajs/medusa/pull/5985) [`d16d1061`](https://github.com/medusajs/medusa/commit/d16d10619dfbd3966a4709753de3d8cc37c6f2eb) Thanks [@pKorsholm](https://github.com/pKorsholm)! - fix(medusa-test-utils, utils, link-modules, pricing, product): upgrade mikro-orm version
+
+- [#5945](https://github.com/medusajs/medusa/pull/5945) [`890e76a5`](https://github.com/medusajs/medusa/commit/890e76a5c53039576c42ca4d46af6f6977cdebd1) Thanks [@riqwan](https://github.com/riqwan)! - feat(types,utils): add promotions create with application method
+
+- [#5810](https://github.com/medusajs/medusa/pull/5810) [`fe007d01`](https://github.com/medusajs/medusa/commit/fe007d01bd827f0e09ee545e48cef18913540c68) Thanks [@fPolic](https://github.com/fPolic)! - feat: sales channel <> order link
+
+- [#5459](https://github.com/medusajs/medusa/pull/5459) [`76332ca6`](https://github.com/medusajs/medusa/commit/76332ca6c153a786acc07d3f06ff45c3b9346fd3) Thanks [@fPolic](https://github.com/fPolic)! - feat: SalesChannel <> Cart joiner config
+
+- Updated dependencies [[`6d1e3cc0`](https://github.com/medusajs/medusa/commit/6d1e3cc0285ef157fd6486060e8b32c00c01aa80), [`42cc8ae3`](https://github.com/medusajs/medusa/commit/42cc8ae3f89ed7d642e51654d1a3cca011f13155), [`925feea0`](https://github.com/medusajs/medusa/commit/925feea04a8222285175c33577548e50516069a7), [`3f6d7996`](https://github.com/medusajs/medusa/commit/3f6d79961dec1c5eb8950f8eacd94a5d87a4acde), [`c1c470e6`](https://github.com/medusajs/medusa/commit/c1c470e6b8646c5f0b4bca56a8e785f6c34e1fef), [`890e76a5`](https://github.com/medusajs/medusa/commit/890e76a5c53039576c42ca4d46af6f6977cdebd1)]:
+  - @medusajs/types@1.11.10
+
 ## 1.11.2
 
 ### Patch Changes
