@@ -1,0 +1,23 @@
+name: Publish Admin UI NPM Package
+
+on:
+  push:
+    branches:
+      - develop
+      - PWA-844-be-fe-admin-replace-image-box-with-video-image-capable-box-lightbox-on-click
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: cd packages/admin-ui
+      - run: npm install
+      - name: Build project
+        run: npm run build
+      - uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
