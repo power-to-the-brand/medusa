@@ -29,14 +29,18 @@ type FormVideo = FormImage
 
 const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
   const { t } = useTranslation()
-  // const { onUpdate, updating } = useEditProductActions(product.id)
+
   const form = useForm<MediaFormWrapper>({
     defaultValues: getDefaultValues(videos),
   })
-  const { mutateAsync, isLoading: loading } = useAdminCustomPost(
-    `/products/${product.id}/video`,
-    ["update-product-videos"]
-  )
+  const {
+    mutateAsync,
+    isLoading: loading,
+    isSuccess: isUpdateProductVideoSuccess,
+  } = useAdminCustomPost(`/products/${product.id}/video`, [
+    "update-product-videos",
+  ])
+
   const {
     formState: { isDirty },
     handleSubmit,
@@ -55,9 +59,9 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
   }
 
   const onSubmit = handleSubmit(async (data) => {
-    let preppedVideos: FormImage[] = []
+    let preppedVideos: FormVideo[] = []
     try {
-      preppedVideos = await prepareVideos(data.media.videos)
+      preppedVideos = await prepareVideos(data.media?.videos ?? [])
     } catch (error) {
       let errorMessage = t(
         "product-media-section-upload-video-error",
@@ -84,8 +88,8 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
     }
     const urls = preppedVideos.map((video) => video.url)
 
-    const response = await mutateAsync({ urls: urls ?? [] })
-    if (response.data && response.response.status < 500) {
+    await mutateAsync({ urls: urls ?? [] })
+    if (isUpdateProductVideoSuccess) {
       notification(
         "Update Video Success",
         "Succesfully Updated Videos",
@@ -93,14 +97,9 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
       )
       refetch()
       onReset()
+    } else {
+      notification("Update Video Error", "Failed to upload video", "error")
     }
-
-    // onUpdate(
-    //   {
-    //     images: urls,
-    //   },
-    //   onReset
-    // )
   })
 
   return (

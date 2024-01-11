@@ -81,8 +81,8 @@ const Edit = () => {
           </div>
           <div className="gap-y-xsmall col-span-4 flex flex-col">
             <ProductThumbnailSection product={product} />
-            <ProductVideoSection product={product} />
             <ProductMediaSection product={product} />
+            <ProductVideoSection product={product} />
           </div>
         </div>
       </div>

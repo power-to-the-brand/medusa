@@ -57,7 +57,7 @@ const MediaFormVideos = ({ form }: Props) => {
   const selected = useMemo(() => {
     const selected: number[] = []
 
-    videos!.forEach((i, index) => {
+    videos.forEach((i, index) => {
       if (i.selected) {
         selected.push(index)
       }
@@ -111,7 +111,6 @@ const MediaFormVideos = ({ form }: Props) => {
           </div>
           <div className="gap-y-2xsmall flex flex-col">
             {fields.map((field, index) => {
-              console.log(field)
               return (
                 <Video
                   key={field.id}
@@ -150,6 +149,7 @@ const Video = ({ video, index, form, remove }: VideoProps) => {
 
   return (
     <Controller
+      key={`${video.id ?? "Video"}-${index + 1}`}
       name={path(`videos.${index}.selected`)}
       control={control}
       render={({ field: { value, onChange } }) => {

@@ -5,6 +5,7 @@ import { ActionType } from "../../molecules/actionables"
 import Section from "../../organisms/section"
 import MediaModal from "./media-modal"
 import { useAdminCustomQuery } from "medusa-react"
+import { useMemo } from "react"
 type Props = {
   product: Product
 }
@@ -22,30 +23,33 @@ const ProductVideoSection = ({ product }: Props) => {
     `/products/${product.id}/video`,
     ["get-videos-products"]
   )
-  console.log(data?.videos)
+
+  const videos = useMemo(() => {
+    if (data && data.videos && Array.isArray(data.videos)) {
+      return data.videos
+    }
+    return []
+  }, [data, data?.videos])
+
   return isFetched ? (
     <>
       <Section title="Video" actions={actions}>
-        {data.videos && data.videos.length > 0 && (
-          <div className="gap-xsmall mt-base grid grid-cols-3">
-            {data.videos.map(
-              (video: { id: string; url: string }, index: number) => {
-                return (
-                  <div
-                    key={video.id}
-                    className="flex aspect-square items-center justify-center"
-                  >
-                    <img
-                      src={video.url}
-                      alt={`Video ${index + 1}`}
-                      className="rounded-rounded max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                )
-              }
-            )}
-          </div>
-        )}
+        <div className="gap-xsmall mt-base grid grid-cols-3">
+          {videos.map((video: { id: string; url: string }, index: number) => {
+            return (
+              <div
+                key={video.id}
+                className="flex aspect-square items-center justify-center"
+              >
+                <img
+                  src={video.url}
+                  alt={`Video ${index + 1}`}
+                  className="rounded-rounded max-h-full max-w-full object-contain"
+                />
+              </div>
+            )
+          })}
+        </div>
       </Section>
 
       <MediaModal
