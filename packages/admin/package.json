@@ -1,6 +1,6 @@
 {
   "name": "medusajs-admin",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "bin": {
     "medusa-admin": "./bin/medusa-admin.js"
   },
@@ -41,7 +41,7 @@
     "fs-extra": "11.1.0",
     "lodash": "^4.17.21",
     "medusa-core-utils": "1.2.0",
-    "medusajs-admin-ui": "3.1.0",
+    "medusajs-admin-ui": "3.1.1",
     "rollup": "3.20.7",
     "rollup-plugin-esbuild": "5.0.0",
     "ts-dedent": "^2.2.0"
