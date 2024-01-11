@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "18"
       - run: cd packages/admin-ui
-      - run: npm ci
+      - run: npm install
       - name: Build project
         run: npm run build
       - uses: JS-DevTools/npm-publish@v2
