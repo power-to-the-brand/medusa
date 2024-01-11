@@ -107,14 +107,14 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
       <Modal.Body>
         <Modal.Header handleClose={onReset}>
           <h1 className="inter-xlarge-semibold m-0">
-            {t("product-media-section-edit-media", "Edit Media")}
+            {t("product-media-section-edit-media", "Edit Video")}
           </h1>
         </Modal.Header>
         <form onSubmit={onSubmit}>
           <Modal.Content>
             <div>
               <h2 className="inter-large-semibold mb-2xsmall">
-                {t("product-media-section-media", "Media")}
+                {t("product-media-section-media", "Video")}
               </h2>
               <p className="inter-base-regular text-grey-50 mb-large">
                 {t(
