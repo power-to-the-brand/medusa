@@ -5,8 +5,6 @@ import { ActionType } from "../../molecules/actionables"
 import Section from "../../organisms/section"
 import MediaModal from "./media-modal"
 import { useAdminCustomQuery } from "medusa-react"
-// @ts-ignore
-import VideoThumbnail from "react-video-thumbnail"
 import { useMemo } from "react"
 type Props = {
   product: Product
@@ -17,7 +15,7 @@ const ProductVideoSection = ({ product }: Props) => {
   const { t } = useTranslation()
   const actions: ActionType[] = [
     {
-      label: t("product-media-section-edit-media", "Edit Media"),
+      label: t("product-media-section-edit-media", "Edit Videos"),
       onClick: toggle,
     },
   ]
@@ -31,7 +29,7 @@ const ProductVideoSection = ({ product }: Props) => {
       return data.videos
     }
     return []
-  }, [data, data?.videos])
+  }, [data])
 
   return isFetched ? (
     <>
@@ -43,7 +41,11 @@ const ProductVideoSection = ({ product }: Props) => {
                 key={video.id}
                 className="flex aspect-square items-center justify-center"
               >
-                <VideoThumbnail videoUrl={video.url} width={120} height={80} />
+                <img
+                  src={video.url}
+                  alt={`Video ${index + 1}`}
+                  className="rounded-rounded max-h-full max-w-full object-contain"
+                />
               </div>
             )
           })}

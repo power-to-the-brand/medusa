@@ -33,13 +33,10 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
   const form = useForm<MediaFormWrapper>({
     defaultValues: getDefaultValues(videos),
   })
-  const {
-    mutateAsync,
-    isLoading: loading,
-    isSuccess: isUpdateProductVideoSuccess,
-  } = useAdminCustomPost(`/products/${product.id}/video`, [
-    "update-product-videos",
-  ])
+  const { mutateAsync, isLoading: loading } = useAdminCustomPost(
+    `/products/${product.id}/video`,
+    ["update-product-videos"]
+  )
 
   const {
     formState: { isDirty },
@@ -88,8 +85,9 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
     }
     const urls = preppedVideos.map((video) => video.url)
 
-    await mutateAsync({ urls: urls ?? [] })
-    if (isUpdateProductVideoSuccess) {
+    const mutation = await mutateAsync({ urls: urls ?? [] })
+    console.log(mutation)
+    if (mutation.response.status !== 500) {
       notification(
         "Update Video Success",
         "Succesfully Updated Videos",
@@ -119,7 +117,7 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
               <p className="inter-base-regular text-grey-50 mb-large">
                 {t(
                   "product-media-section-add-images-to-your-product",
-                  "Add images to your product."
+                  "Add videos to your product."
                 )}
               </p>
               <div>
