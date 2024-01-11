@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+      - PWA-844-be-fe-admin-replace-image-box-with-video-image-capable-box-lightbox-on-click
 
 jobs:
   publish:
@@ -14,9 +15,9 @@ jobs:
         with:
           node-version: "18"
       - run: cd packages/admin-ui
-      - run: yarn install
+      - run: npm ci
       - name: Build project
-        run: yarn build
+        run: npm run build
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
