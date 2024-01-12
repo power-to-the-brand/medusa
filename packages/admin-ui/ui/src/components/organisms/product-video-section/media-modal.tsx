@@ -105,18 +105,18 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
       <Modal.Body>
         <Modal.Header handleClose={onReset}>
           <h1 className="inter-xlarge-semibold m-0">
-            {t("product-media-section-edit-media", "Edit Video")}
+            {t("product-media-section-edit-video", "Edit Video")}
           </h1>
         </Modal.Header>
         <form onSubmit={onSubmit}>
           <Modal.Content>
             <div>
               <h2 className="inter-large-semibold mb-2xsmall">
-                {t("product-media-section-media", "Video")}
+                {t("product-media-section-video", "Video")}
               </h2>
               <p className="inter-base-regular text-grey-50 mb-large">
                 {t(
-                  "product-media-section-add-images-to-your-product",
+                  "product-media-section-add-video-to-your-product",
                   "Add videos to your product."
                 )}
               </p>
@@ -133,7 +133,7 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
                 type="button"
                 onClick={onReset}
               >
-                {t("product-media-section-cancel", "Cancel")}
+                {t("product-video-section-cancel", "Cancel")}
               </Button>
               <Button
                 size="small"
@@ -142,7 +142,7 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
                 disabled={!isDirty}
                 loading={loading}
               >
-                {t("product-media-section-save-and-close", "Save and close")}
+                {t("product-video-section-save-and-close", "Save and close")}
               </Button>
             </div>
           </Modal.Footer>

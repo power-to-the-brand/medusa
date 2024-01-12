@@ -8,11 +8,11 @@ import {
 } from "react-hook-form"
 import { FormImage } from "../../../../types/shared"
 import { NestedForm } from "../../../../utils/nested-form"
-import FileUploadField from "../../../atoms/file-upload-field"
 import Button from "../../../fundamentals/button"
 import CheckCircleFillIcon from "../../../fundamentals/icons/check-circle-fill-icon"
 import TrashIcon from "../../../fundamentals/icons/trash-icon"
 import Actionables, { ActionType } from "../../../molecules/actionables"
+import FileUploadFieldVideo from "../../../atoms/file-upload-field-video"
 
 type ImageType = { selected: boolean } & FormImage
 export type VideoType = ImageType
@@ -80,7 +80,7 @@ const MediaFormVideos = ({ form }: Props) => {
     <div>
       <div>
         <div>
-          <FileUploadField
+          <FileUploadFieldVideo
             onFileChosen={handleFilesChosen}
             placeholder="Upload Video"
             multiple
