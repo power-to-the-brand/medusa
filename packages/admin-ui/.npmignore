@@ -4,3 +4,4 @@
 /build
 .vercel
 /ui/preview
+.npmrc
