@@ -13,6 +13,14 @@ import CheckCircleFillIcon from "../../../fundamentals/icons/check-circle-fill-i
 import TrashIcon from "../../../fundamentals/icons/trash-icon"
 import Actionables, { ActionType } from "../../../molecules/actionables"
 import FileUploadFieldVideo from "../../../atoms/file-upload-field-video"
+import {
+  DragDropContext,
+  Draggable,
+  DropResult,
+  Droppable,
+  ResponderProvided,
+} from "@hello-pangea/dnd"
+import { reorder } from "../../../../utils/reorder-dnd"
 
 type ImageType = { selected: boolean } & FormImage
 export type VideoType = ImageType
@@ -76,6 +84,20 @@ const MediaFormVideos = ({ form }: Props) => {
     })
   }
 
+  const onDragEnd = (result: DropResult) => {
+    const { destination, source } = result
+    if (!destination) {
+      return
+    }
+    const newVideos = reorder(
+      videos,
+      source.index,
+      destination.index
+    ) as ImageType[]
+
+    setValue("__nested__.videos", newVideos)
+  }
+
   return (
     <div>
       <div>
@@ -110,17 +132,36 @@ const MediaFormVideos = ({ form }: Props) => {
             />
           </div>
           <div className="gap-y-2xsmall flex flex-col">
-            {fields.map((field, index) => {
-              return (
-                <Video
-                  key={field.id}
-                  video={field}
-                  index={index}
-                  remove={remove}
-                  form={form}
-                />
-              )
-            })}
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId={"video-dnd"}>
+                {(provider) => (
+                  <div ref={provider.innerRef} {...provider.droppableProps}>
+                    {fields.map((field, index) => (
+                      <Draggable
+                        draggableId={field.name ?? `video-${index}-dnd`}
+                        index={index}
+                      >
+                        {({ dragHandleProps, draggableProps }) => (
+                          <div
+                            ref={provider.innerRef}
+                            {...dragHandleProps}
+                            {...draggableProps}
+                          >
+                            <Video
+                              key={field.id}
+                              video={field}
+                              index={index}
+                              remove={remove}
+                              form={form}
+                            />
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
           </div>
         </div>
       )}

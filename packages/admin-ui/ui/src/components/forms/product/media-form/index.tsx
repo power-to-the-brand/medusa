@@ -13,7 +13,14 @@ import Button from "../../../fundamentals/button"
 import CheckCircleFillIcon from "../../../fundamentals/icons/check-circle-fill-icon"
 import TrashIcon from "../../../fundamentals/icons/trash-icon"
 import Actionables, { ActionType } from "../../../molecules/actionables"
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  DropResult,
+  ResponderProvided,
+} from "@hello-pangea/dnd"
+import { reorder } from "../../../../utils/reorder-dnd"
 
 type ImageType = { selected: boolean } & FormImage
 
@@ -33,7 +40,19 @@ const MediaForm = ({ form }: Props) => {
     name: path("images"),
   })
 
-  const onDragEnd = (event: unknown) => console.log(event)
+  const onDragEnd = (result: DropResult, provided: ResponderProvided) => {
+    const { destination, source } = result
+    if (!destination) {
+      return
+    }
+    const newImages = reorder(
+      images,
+      source.index,
+      destination.index
+    ) as ImageType[]
+
+    setValue("__nested__.images", newImages)
+  }
 
   const handleFilesChosen = (files: File[]) => {
     if (files.length) {
@@ -101,28 +120,36 @@ const MediaForm = ({ form }: Props) => {
             />
           </div>
           <div className="gap-y-2xsmall flex flex-col">
-            STANLEY
             <DragDropContext onDragEnd={onDragEnd}>
-              <Droppable droppableId="droppable-1" direction="vertical">
-                {(provided, snapshot) => (
-                  <div ref={provided.innerRef} {...provided.droppableProps}>
-                    Good to go
-                    {provided.placeholder}
+              <Droppable droppableId={"image-dnd"}>
+                {(provider) => (
+                  <div ref={provider.innerRef} {...provider.droppableProps}>
+                    {fields.map((field, index) => (
+                      <Draggable
+                        draggableId={field.name ?? `image-${index}-dnd`}
+                        index={index}
+                      >
+                        {({ dragHandleProps, draggableProps }) => (
+                          <div
+                            ref={provider.innerRef}
+                            {...dragHandleProps}
+                            {...draggableProps}
+                          >
+                            <Image
+                              remove={remove}
+                              key={field.id}
+                              image={field}
+                              index={index}
+                              form={form}
+                            />
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
                   </div>
                 )}
               </Droppable>
             </DragDropContext>
-            {fields.map((field, index) => {
-              return (
-                <Image
-                  key={field.id}
-                  image={field}
-                  index={index}
-                  remove={remove}
-                  form={form}
-                />
-              )
-            })}
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { Product } from "@medusajs/medusa"
+import { Product, Image } from "@medusajs/medusa"
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
@@ -10,9 +10,11 @@ import { nestedForm } from "../../../utils/nested-form"
 import MediaForm, { MediaFormType } from "../../forms/product/media-form"
 import Button from "../../fundamentals/button"
 import Modal from "../../molecules/modal"
+import { useAdminCustomPost } from "medusa-react"
 
 type Props = {
   product: Product
+  images: Image[]
   open: boolean
   onClose: () => void
 }
@@ -21,12 +23,17 @@ type MediaFormWrapper = {
   media: MediaFormType
 }
 
-const MediaModal = ({ product, open, onClose }: Props) => {
+const MediaModal = ({ product, open, onClose, images }: Props) => {
   const { t } = useTranslation()
   const { onUpdate, updating } = useEditProductActions(product.id)
   const form = useForm<MediaFormWrapper>({
-    defaultValues: getDefaultValues(product),
+    defaultValues: getDefaultValues(images),
   })
+
+  const { mutateAsync, isLoading: loading } = useAdminCustomPost(
+    `/products/${product.id}/image-ranking`,
+    ["update-product-videos"]
+  )
 
   const {
     formState: { isDirty },
@@ -37,11 +44,22 @@ const MediaModal = ({ product, open, onClose }: Props) => {
   const notification = useNotification()
 
   useEffect(() => {
-    reset(getDefaultValues(product))
+    reset(getDefaultValues(images))
   }, [product, reset])
 
   const onReset = () => {
-    reset(getDefaultValues(product))
+    reset(getDefaultValues(images))
+    onClose()
+  }
+
+  const handleSuccessUpdateProduct = async (
+    imagesWithRankings: {
+      url: string
+      tribedrops_rank: number
+    }[]
+  ) => {
+    await mutateAsync({ imagesWithRankings })
+    reset(getDefaultValues(images))
     onClose()
   }
 
@@ -75,12 +93,17 @@ const MediaModal = ({ product, open, onClose }: Props) => {
       return
     }
     const urls = preppedImages.map((image) => image.url)
-
+    const imagesWithRankings = data.media.images.map((image, index) => ({
+      url: image.url,
+      tribedrops_rank: index,
+    }))
     onUpdate(
       {
         images: urls,
       },
-      onReset
+      () => {
+        handleSuccessUpdateProduct(imagesWithRankings)
+      }
     )
   })
 
@@ -136,11 +159,11 @@ const MediaModal = ({ product, open, onClose }: Props) => {
   )
 }
 
-const getDefaultValues = (product: Product): MediaFormWrapper => {
+const getDefaultValues = (images: Image[]): MediaFormWrapper => {
   return {
     media: {
       images:
-        product.images?.map((image) => ({
+        images.map((image) => ({
           url: image.url,
           selected: false,
         })) || [],

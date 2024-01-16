@@ -83,9 +83,13 @@ const MediaModal = ({ videos, refetch, open, onClose, product }: Props) => {
       )
       return
     }
-    const urls = preppedVideos.map((video) => video.url)
-
-    const mutation = await mutateAsync({ urls: urls ?? [] })
+    const videosWithRankings = (data.media.videos ?? []).map(
+      (video, index) => ({
+        url: video.url,
+        tribedrops_rank: index,
+      })
+    )
+    const mutation = await mutateAsync({ videosWithRankings })
     console.log(mutation)
     if (mutation.response.status !== 500) {
       notification(
