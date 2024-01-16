@@ -16215,6 +16215,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.5
+  resolution: "@types/hoist-non-react-statics@npm:3.3.5"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 2a3b64bf3d9817d7830afa60ee314493c475fb09570a64e7737084cd482d2177ebdddf888ce837350bac51741278b077683facc9541f052d4bbe8487b4e3e618
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^5.0.0":
   version: 5.1.2
   resolution: "@types/html-minifier-terser@npm:5.1.2"
@@ -16778,6 +16788,18 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 1f79a7708d038cd651bdb21e01a99c594761bc9a40a565abe98958e1d27facfeb6e9824ddf6ae3504e7a56568f0f3da2380fe52ac18477b5864d2d5cf1386a9e
+  languageName: node
+  linkType: hard
+
+"@types/react-redux@npm:^7.1.20":
+  version: 7.1.33
+  resolution: "@types/react-redux@npm:7.1.33"
+  dependencies:
+    "@types/hoist-non-react-statics": ^3.3.0
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+    redux: ^4.0.0
+  checksum: e17a2fea00c6ab5f22868e927b4da7b7cf8dc7c85102638fa0f87e12ae0ec13335d9b3bf75098b3316dd8d2a18c99fe08bed22daa989a13f3710c4530f7b979e
   languageName: node
   linkType: hard
 
@@ -22847,6 +22869,15 @@ __metadata:
   peerDependencies:
     postcss: ^8.4
   checksum: e15d1b8bb5f8016b93b19d0fe7f6f1a5219e41023c183b172a669a74b76ce2f9b527679ef32d662115d616aa80cb291fa47c36c651b59bdde24309549a851e97
+  languageName: node
+  linkType: hard
+
+"css-box-model@npm:^1.2.0":
+  version: 1.2.1
+  resolution: "css-box-model@npm:1.2.1"
+  dependencies:
+    tiny-invariant: ^1.0.6
+  checksum: 611e56d76b16e4e21956ed9fa53f1936fbbfaccd378659587e9c929f342037fc6c062f8af9447226e11fe7c95e31e6c007a37e592f9bff4c2d40e6915553104a
   languageName: node
   linkType: hard
 
@@ -29136,7 +29167,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -36488,97 +36519,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"medusajs-admin-ui@npm:^2.1.5":
-  version: 2.1.10
-  resolution: "medusajs-admin-ui@npm:2.1.10"
-  dependencies:
-    "@babel/parser": 7.22.5
-    "@babel/traverse": 7.22.5
-    "@hookform/error-message": ^2.0.1
-    "@hookform/resolvers": ^3.3.1
-    "@medusajs/icons": ^1.1.0
-    "@medusajs/ui": ^2.2.4
-    "@medusajs/ui-preset": ^1.0.2
-    "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
-    "@radix-ui/react-accordion": ^1.0.1
-    "@radix-ui/react-avatar": ^1.0.1
-    "@radix-ui/react-collapsible": ^1.0.1
-    "@radix-ui/react-dialog": ^1.0.4
-    "@radix-ui/react-dropdown-menu": ^2.0.2
-    "@radix-ui/react-popover": ^1.0.3
-    "@radix-ui/react-portal": ^1.0.2
-    "@radix-ui/react-radio-group": ^1.1.1
-    "@radix-ui/react-select": ^2.0.0
-    "@radix-ui/react-switch": ^1.0.1
-    "@radix-ui/react-tooltip": ^1.0.3
-    "@segment/analytics-next": ^1.51.1
-    "@svgr/webpack": ^8.0.1
-    "@swc/core": ^1.3.61
-    "@tailwindcss/forms": ^0.5.3
-    "@tanstack/react-query": 4.22.0
-    "@tanstack/react-table": ^8.7.9
-    autoprefixer: ^10.4.13
-    chokidar: ^3.5.3
-    clsx: ^1.2.1
-    copy-to-clipboard: ^3.3.1
-    copy-webpack-plugin: ^11.0.0
-    css-loader: ^6.8.1
-    emoji-picker-react: ^4.4.3
-    framer-motion: ^9.1.6
-    html-webpack-plugin: ^5.5.1
-    i18next: ^22.5.0
-    i18next-browser-languagedetector: ^7.0.1
-    i18next-http-backend: ^2.2.1
-    md5: ^2.3.0
-    medusa-react: ^9.0.12
-    mini-css-extract-plugin: ^2.7.6
-    moment: ^2.29.4
-    path-browserify: ^1.0.1
-    pluralize: ^8.0.0
-    postcss: ^8.4.21
-    postcss-loader: ^7.3.2
-    postcss-preset-env: ^8.4.1
-    prism-react-renderer: ^2.0.4
-    process: ^0.11.10
-    query-string: ^8.1.0
-    react: ^18.2.0
-    react-collapsible: ^2.8.3
-    react-country-flag: ^3.0.2
-    react-currency-input-field: ^3.6.8
-    react-datepicker: ^4.8.0
-    react-dev-utils: ^12.0.1
-    react-dnd: ^16.0.1
-    react-dnd-html5-backend: ^16.0.1
-    react-dom: ^18.2.0
-    react-helmet-async: ^1.3.0
-    react-highlight-words: ^0.18.0
-    react-hook-form: 7.38.0
-    react-hot-toast: 2.4.0
-    react-hotkeys-hook: ^3.4.7
-    react-i18next: ^12.3.1
-    react-json-tree: ^0.17.0
-    react-jwt: ^1.1.4
-    react-nestable: ^2.0.0
-    react-refresh: ^0.14.0
-    react-router-dom: 6.8.0
-    react-select: ^5.5.4
-    react-table: ^7.7.0
-    style-loader: ^3.3.3
-    swc-loader: ^0.2.3
-    swc-minify-webpack-plugin: ^2.1.1
-    tailwindcss: 3.2.2
-    tailwindcss-radix: ^2.7.0
-    ts-dedent: ^2.2.0
-    type-fest: ^3.6.0
-    webpack: ^5.84.1
-    webpack-dev-server: 4.15.0
-    webpackbar: ^5.0.2
-    zod: ^3.22.2
-  checksum: 0dcfdbcb39fdf3ff38c907db14435aab748a141a400a794f920e620954615af7ba9d328f7f847ffd2987bb267668c183187f5b9ccdb738464abe6fc40e20e437
-  languageName: node
-  linkType: hard
-
-"medusajs-admin-ui@workspace:packages/admin-ui":
+"medusajs-admin-ui@3.2.0, medusajs-admin-ui@workspace:packages/admin-ui":
   version: 0.0.0-use.local
   resolution: "medusajs-admin-ui@workspace:packages/admin-ui"
   dependencies:
@@ -36643,6 +36584,7 @@ __metadata:
     process: ^0.11.10
     query-string: ^8.1.0
     react: ^18.2.0
+    react-beautiful-dnd: ^13.1.1
     react-collapsible: ^2.8.3
     react-country-flag: ^3.0.2
     react-currency-input-field: ^3.6.8
@@ -36705,7 +36647,7 @@ __metadata:
     fs-extra: 11.1.0
     lodash: ^4.17.21
     medusa-core-utils: 1.2.0
-    medusajs-admin-ui: ^2.1.5
+    medusajs-admin-ui: 3.2.0
     rollup: 3.20.7
     rollup-plugin-esbuild: 5.0.0
     ts-dedent: ^2.2.0
@@ -36749,6 +36691,13 @@ __metadata:
   version: 4.0.3
   resolution: "memoize-one@npm:4.0.3"
   checksum: 0ca0a07a0eb58867563cb05abf74596b21df02ac1046c55e5639367df8be64fa5a4a82430520f88f1ffaddec2657355b9189471ca3cff700e2164b662569e060
+  languageName: node
+  linkType: hard
+
+"memoize-one@npm:^5.1.1":
+  version: 5.2.1
+  resolution: "memoize-one@npm:5.2.1"
+  checksum: fd22dbe9a978a2b4f30d6a491fc02fb90792432ad0dab840dc96c1734d2bd7c9cdeb6a26130ec60507eb43230559523615873168bcbe8fafab221c30b11d54c1
   languageName: node
   linkType: hard
 
@@ -41735,6 +41684,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"raf-schd@npm:^4.0.2":
+  version: 4.0.3
+  resolution: "raf-schd@npm:4.0.3"
+  checksum: ecabf0957c05fad059779bddcd992f1a9d3a35dfea439a6f0935c382fcf4f7f7fa60489e467b4c2db357a3665167d2a379782586b59712bb36c766e02824709b
+  languageName: node
+  linkType: hard
+
 "ramda@npm:0.29.0":
   version: 0.29.0
   resolution: "ramda@npm:0.29.0"
@@ -41897,6 +41853,24 @@ __metadata:
     csstype: ^3.0.10
     lodash.curry: ^4.1.1
   checksum: 00ed3bbc4b7cf829117eb38d2e350b03ef6a746a3b58e57494a2cf8a3de6f98494ee9209543a399d474e8a6c0172584b3b61309e59e57c2b2694b5dc910a14a1
+  languageName: node
+  linkType: hard
+
+"react-beautiful-dnd@npm:^13.1.1":
+  version: 13.1.1
+  resolution: "react-beautiful-dnd@npm:13.1.1"
+  dependencies:
+    "@babel/runtime": ^7.9.2
+    css-box-model: ^1.2.0
+    memoize-one: ^5.1.1
+    raf-schd: ^4.0.2
+    react-redux: ^7.2.0
+    redux: ^4.0.4
+    use-memo-one: ^1.1.1
+  peerDependencies:
+    react: ^16.8.5 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.5 || ^17.0.0 || ^18.0.0
+  checksum: 5bc04f6dcfededc6e5c90e696cda07816a018eada52f7438ded839f03786e3f319aa8a0bc7b14b86fb26a12c0e5ba53e8c5a4bf3832a8f827dd70f1410675525
   languageName: node
   linkType: hard
 
@@ -42387,6 +42361,27 @@ __metadata:
     react: ^16.8.0 || ^17 || ^18
     react-dom: ^16.8.0 || ^17 || ^18
   checksum: 23f93540537ca4c035425bb8d5e51b11131fbc921d7ac1d041d0ae557feac8c877f3a012d36b94df8787803f52ed81e6df9257ac9e58719875f7805518d6db3f
+  languageName: node
+  linkType: hard
+
+"react-redux@npm:^7.2.0":
+  version: 7.2.9
+  resolution: "react-redux@npm:7.2.9"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    "@types/react-redux": ^7.1.20
+    hoist-non-react-statics: ^3.3.2
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^17.0.2
+  peerDependencies:
+    react: ^16.8.3 || ^17 || ^18
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 904fac7f493942585ed7ebbd693b4f6b5c09c292366b4550e887ba1a2e83a92c55f0ddc35161d4ba87e3fadb6c681a59003f58df6335e5d2ddd72b06a557851d
   languageName: node
   linkType: hard
 
@@ -42906,7 +42901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"redux@npm:^4.2.0":
+"redux@npm:^4.0.0, redux@npm:^4.0.4, redux@npm:^4.2.0":
   version: 4.2.1
   resolution: "redux@npm:4.2.1"
   dependencies:
@@ -47003,7 +46998,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:^1.3.1":
+"tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.3.1":
   version: 1.3.1
   resolution: "tiny-invariant@npm:1.3.1"
   checksum: 5b87c1d52847d9452b60d0dcb77011b459044e0361ca8253bfe7b43d6288106e12af926adb709a6fc28900e3864349b91dad9a4ac93c39aa15f360b26c2ff4db
@@ -48822,6 +48817,15 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 1958886fc35262d973f5cd4ce16acd6ce3a66707a72761c93abd1b5ae64e1a11efa83f68e6c8c9bf1647628037980ce59df64cba50adb36bd4071851e70527d2
+  languageName: node
+  linkType: hard
+
+"use-memo-one@npm:^1.1.1":
+  version: 1.1.3
+  resolution: "use-memo-one@npm:1.1.3"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 3d596e65a6b47b2f1818061599738e00daad1f9a9bb4e5ce1f014b20a35b297e50fe4bf1d8c1699ab43ea97f01f84649a736c15ceff96de83bfa696925f6cc6b
   languageName: node
   linkType: hard
 
