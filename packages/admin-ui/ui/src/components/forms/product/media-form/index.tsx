@@ -13,6 +13,7 @@ import Button from "../../../fundamentals/button"
 import CheckCircleFillIcon from "../../../fundamentals/icons/check-circle-fill-icon"
 import TrashIcon from "../../../fundamentals/icons/trash-icon"
 import Actionables, { ActionType } from "../../../molecules/actionables"
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 
 type ImageType = { selected: boolean } & FormImage
 
@@ -31,6 +32,8 @@ const MediaForm = ({ form }: Props) => {
     control: control,
     name: path("images"),
   })
+
+  const onDragEnd = (event: unknown) => console.log(event)
 
   const handleFilesChosen = (files: File[]) => {
     if (files.length) {
@@ -98,6 +101,17 @@ const MediaForm = ({ form }: Props) => {
             />
           </div>
           <div className="gap-y-2xsmall flex flex-col">
+            STANLEY
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="droppable-1" direction="vertical">
+                {(provided, snapshot) => (
+                  <div ref={provided.innerRef} {...provided.droppableProps}>
+                    Good to go
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
             {fields.map((field, index) => {
               return (
                 <Image
@@ -177,7 +191,7 @@ const Image = ({ image, index, form, remove }: ImageProps) => {
                 </span>
               </div>
             </button>
-            <div className="right-base absolute top-0 bottom-0 flex items-center">
+            <div className="right-base absolute bottom-0 top-0 flex items-center">
               <Actionables actions={actions} forceDropdown />
             </div>
           </div>

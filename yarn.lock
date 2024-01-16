@@ -4443,55 +4443,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/accessibility@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@dnd-kit/accessibility@npm:3.1.0"
-  dependencies:
-    tslib: ^2.0.0
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 4f9d24e801d66d4fbb551ec389ed90424dd4c5bbdf527000a618e9abb9833cbd84d9a79e362f470ccbccfbd6d00217a9212c92f3cef66e01c951c7f79625b9d7
-  languageName: node
-  linkType: hard
-
-"@dnd-kit/core@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@dnd-kit/core@npm:6.1.0"
-  dependencies:
-    "@dnd-kit/accessibility": ^3.1.0
-    "@dnd-kit/utilities": ^3.2.2
-    tslib: ^2.0.0
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: c793eb97cb59285ca8937ebcdfcd27cff09d750ae06722e36ca5ed07925e41abc36a38cff98f9f6056f7a07810878d76909826142a2968330e7e22060e6be584
-  languageName: node
-  linkType: hard
-
-"@dnd-kit/sortable@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@dnd-kit/sortable@npm:8.0.0"
-  dependencies:
-    "@dnd-kit/utilities": ^3.2.2
-    tslib: ^2.0.0
-  peerDependencies:
-    "@dnd-kit/core": ^6.1.0
-    react: ">=16.8.0"
-  checksum: a6066c652b892c6a11320c7d8f5c18fdf723e721e8eea37f4ab657dee1ac5e7ca710ac32ce0712a57fe968bc07c13bcea5d5599d90dfdd95619e162befd4d2fb
-  languageName: node
-  linkType: hard
-
-"@dnd-kit/utilities@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "@dnd-kit/utilities@npm:3.2.2"
-  dependencies:
-    tslib: ^2.0.0
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 9aa90526f3e3fd567b5acc1b625a63177b9e8d00e7e50b2bd0e08fa2bf4dba7e19529777e001fdb8f89a7ce69f30b190c8364d390212634e0afdfa8c395e85a0
-  languageName: node
-  linkType: hard
-
 "@emotion/babel-plugin@npm:^11.11.0":
   version: 11.11.0
   resolution: "@emotion/babel-plugin@npm:11.11.0"
@@ -16798,6 +16749,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 5b7dc9d799de0b6a11b7dc2aa1350228bafa23031487f69ad9d602a13cef7e4751e4bf373b21f7c6a00b623b6e930ba87c35497b459307dd97a3cc5261b3d031
+  languageName: node
+  linkType: hard
+
+"@types/react-beautiful-dnd@npm:^13.1.8":
+  version: 13.1.8
+  resolution: "@types/react-beautiful-dnd@npm:13.1.8"
+  dependencies:
+    "@types/react": "*"
+  checksum: ccdd4b2aa9e35cba4e51f3c673c2caa5bb67b6dee562d4b07ac3d3547cd68fd1ee9f21b95d55972087bdd4bdb340e256cccedb20f7129c273f24214f334708aa
   languageName: node
   linkType: hard
 
@@ -36568,16 +36528,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"medusajs-admin-ui@^3.2.0, medusajs-admin-ui@workspace:packages/admin-ui":
+"medusajs-admin-ui@^3.2.1, medusajs-admin-ui@workspace:packages/admin-ui":
   version: 0.0.0-use.local
   resolution: "medusajs-admin-ui@workspace:packages/admin-ui"
   dependencies:
     "@babel/parser": 7.22.5
     "@babel/traverse": 7.22.5
     "@babel/types": 7.22.5
-    "@dnd-kit/core": ^6.1.0
-    "@dnd-kit/sortable": ^8.0.0
-    "@dnd-kit/utilities": ^3.2.2
     "@hookform/error-message": ^2.0.1
     "@hookform/resolvers": ^3.3.1
     "@medusajs/icons": ^1.1.0
@@ -36605,6 +36562,7 @@ __metadata:
     "@tanstack/react-table": ^8.7.9
     "@types/pluralize": ^0.0.29
     "@types/react": ^18.2.0
+    "@types/react-beautiful-dnd": ^13.1.8
     "@types/react-datepicker": ^4.10.0
     "@types/react-dom": ^18.2.0
     "@types/react-table": ^7.7.9
@@ -36699,7 +36657,7 @@ __metadata:
     fs-extra: 11.1.0
     lodash: ^4.17.21
     medusa-core-utils: 1.2.0
-    medusajs-admin-ui: ^3.2.0
+    medusajs-admin-ui: ^3.2.1
     rollup: 3.20.7
     rollup-plugin-esbuild: 5.0.0
     ts-dedent: ^2.2.0
